@@ -1,9 +1,11 @@
 #include <LiquidCrystal.h>
 LiquidCrystal lcd(7, 8, 9, 10, 11, 12);
-
+//D7-RS, D8-EN
+//D9-LCD 11th pin, D10-LCD 12th pin
+//D11-LCD 13th pin, D12-LCD 14th pin
 
 void setup() {
-  lcd.begin(16, 2);
+  lcd.begin(16, 2);//16 columns and 2 rows
 }
 
 void loop() {
@@ -11,13 +13,13 @@ void loop() {
     double inputNumber = 27.625; 
     lcd.clear();
     lcd.setCursor(0,0);
-    lcd.print("Decimal:");
+    lcd.print("Decimal:");//prints Decimal in first row of LCD
     lcd.setCursor(8,1);
-    lcd.print(inputNumber);
+    lcd.print(inputNumber);//prints the decimal value on second row and eighth column
     delay(2000);
     lcd.clear();
     lcd.setCursor(0,0);
-    lcd.print("Binary: ");
+    lcd.print("Binary: ");//prints Binary in first row of LCD
     int intPart = int(inputNumber);
     float fractionalPart = inputNumber - intPart;
     lcd.setCursor(7,1);
